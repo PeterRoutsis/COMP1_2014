@@ -5,6 +5,13 @@
 # version 2 edited 06/03/2014
 
 import random
+import datetime
+
+def GetDate():
+  from datetime import date
+  d = date.today()
+  date = d.strftime("%d/%m/%y")
+  return date
 
 NO_OF_RECENT_SCORES = 3
 
@@ -236,6 +243,7 @@ def PlayGame(Deck, RecentScores):
     UpdateRecentScores(RecentScores, 51)
 
 if __name__ == '__main__':
+  Date = GetDate()
   for Count in range(1, 53):
     Deck.append(TCard())
   for Count in range(1, NO_OF_RECENT_SCORES + 1):
